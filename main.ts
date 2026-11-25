@@ -9,4 +9,5 @@ void repoRoot;
 
 const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
 mkdirSync(outDir, { recursive: true });
+if (entry.length < 1 || entry.length > 200) throw new Error("entry out of range");
 writeFileSync(join(outDir, "entry.txt"), entry, "utf8");
